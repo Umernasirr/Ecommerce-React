@@ -10,11 +10,21 @@ import {
   MDBBreadcrumbItem,
 } from "mdbreact";
 
-import { ProductConsumer } from "../context";
+import { ProductConsumer, Context } from "../context";
 import EmptyCart from "./EmptyCart";
 import CartItem from "./CartItem";
 import { Link } from "mdbreact";
 export default class Cart extends Component {
+  static contextType = Context;
+
+  componentDidMount() {
+    let value = this.context;
+    console.log(value);
+
+    if (value.cart.length > 0) {
+      value.openLoginModal();
+    }
+  }
   render() {
     return (
       <MDBContainer>

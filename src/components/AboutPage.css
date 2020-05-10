@@ -1,0 +1,7 @@
+#aboutMain {
+  background: url("/img/aboutBackground.jpg") no-repeat center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  animation-duration: 10s;
+  background-attachment: fixed;
+}

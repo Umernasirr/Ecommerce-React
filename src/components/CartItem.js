@@ -24,46 +24,43 @@ const CartItem = ({ item }) => {
           </td>
           <td className="py-3">Rs. {item.price}</td>
 
-          <td className="">
+          <td className="" width="25%">
             <MDBBtn
               style={{
-                padding: "6px 10px",
+                padding: "0px 1px",
               }}
               onClick={() => {
                 value.increment(item.id);
               }}
-              outline
-              size="sm"
+              size="xs"
               color="primary  "
             >
-              <i className="fas fa-plus" />
+              <i className="fa-plus fas fa-xs" />
             </MDBBtn>
             {item.count}
             <MDBBtn
               style={{
-                padding: "6px 10px",
+                padding: "0px 1px",
               }}
               onClick={() => {
                 value.decrement(item.id);
               }}
-              outline
               size="sm"
-              color="primary  "
+              color="danger"
             >
               <i className="fas fa-minus " />
             </MDBBtn>
           </td>
-          <td>
+          <td width="5%">
             <MDBBtn
               style={{
-                padding: "6px 10px",
+                padding: "0px 2px",
               }}
               size="sm"
               onClick={() => {
                 value.removeFromCart(item.id);
               }}
-              outline
-              color="primary  "
+              color="primary"
             >
               <i className="fas fa-trash-alt"></i>
             </MDBBtn>

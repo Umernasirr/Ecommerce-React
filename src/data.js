@@ -1,14 +1,9 @@
-/* 
-https://www.iconfinder.com/icons/1243689/call_phone_icon
-Creative Commons (Attribution 3.0 Unported);
-https://www.iconfinder.com/Makoto_msk */
-
 export const storeProducts = [
   {
     id: 1,
     title: "Google Pixel - Black",
     img: "img/product-1.png",
-    price: 10,
+    price: 12000,
     category: "GOOGLE",
     categoryId: 1,
 
@@ -22,7 +17,7 @@ export const storeProducts = [
     id: 2,
     title: "Samsung S7",
     img: "img/product-2.png",
-    price: 16,
+    price: 16000,
     category: "SAMSUNG",
     categoryId: 2,
     info:
@@ -35,7 +30,7 @@ export const storeProducts = [
     id: 3,
     title: "HTC 10 - Black",
     img: "img/product-3.png",
-    price: 8,
+    price: 80000,
     category: "htc",
     categoryId: 3,
     info:
@@ -115,9 +110,10 @@ export const detailProduct = {
   id: 1,
   title: "Google Pixel - Black",
   img: "img/product-1.png",
-  price: 43000,
-  category: "google",
+  price: 12000,
+  category: "GOOGLE",
   categoryId: 1,
+
   info:
     "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
   inCart: false,

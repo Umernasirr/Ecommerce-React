@@ -1,31 +1,36 @@
 import React from "react";
-import {
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBBadge,
-  MDBRow,
-  MDBCol,
-  MDBContainer,
-} from "mdbreact";
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCol } from "mdbreact";
 import posed from "react-pose";
+import { Redirect } from "react-router-dom";
+
 class SimilarProduct extends React.Component {
+  state = {
+    hovering: false,
+    hoverText: "",
+    redirect: null,
+  };
+
   Square = posed.div({
     idle: { scale: 1 },
     hovered: { scale: 1.05 },
   });
-  state = {
-    hovering: false,
-    hoverText: "",
-  };
+
+  componentDidMount() {
+    this.setState({
+      redirect: null,
+    });
+  }
 
   state = { hovering: false };
   render() {
     const { id, title, info, price, img } = this.props.item;
+
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />;
+    }
     return (
       <MDBCol className="align-content-center my-2">
-        <MDBCard className="align-items-center">
+        <MDBCard onClick={() => {}} className="align-items-center">
           <this.Square
             pose={this.state.hovering ? "hovered" : "idle"}
             onMouseEnter={() => {
@@ -35,7 +40,10 @@ class SimilarProduct extends React.Component {
               this.setState({ hovering: false });
             }}
             onClick={() => {
-              // value.openModal(product.id);
+              this.props.value.handleDetail(id);
+              this.setState({
+                redirect: "/details",
+              });
             }}
           >
             <MDBCardImage

@@ -11,6 +11,8 @@
     "react": "^16.13.1",
     "react-burger-menu": "^2.6.13",
     "react-dom": "^16.13.1",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.1.10",
     "react-inner-image-zoom": "^1.0.5",
     "react-pose": "^4.0.10",
     "react-router-dom": "^5.1.2",
@@ -36,5 +38,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "."
 }

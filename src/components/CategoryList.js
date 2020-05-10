@@ -22,39 +22,41 @@ const CategoryList = () => {
   });
 
   return (
-    <ProductConsumer>
-      {(value) => (
-        <MDBListGroup className="my-5 py-2 ">
-          <h4 className="h4 mb-3">Categories</h4>
+    <div>
+      <ProductConsumer>
+        {(value) => (
+          <MDBListGroup className="my-5 py-2 ">
+            <h4 className="h4 mb-3">Categories</h4>
 
-          {value.categories.map((item, idx) => {
-            let clr = idx === value.currentCategory ? "#ff6600" : "#000000";
-            return (
-              <Item key={idx}>
-                <MDBListGroupItem
-                  style={{ color: clr }}
-                  key={idx}
-                  onClick={() => {
-                    value.setCategory(idx);
-                  }}
-                  className=" "
-                >
-                  <p className="">
-                    {item}
-                    {"  "}
-                    {idx === value.currentCategory ? (
-                      <MDBIcon icon="check" />
-                    ) : (
-                      <React.Fragment></React.Fragment>
-                    )}
-                  </p>
-                </MDBListGroupItem>
-              </Item>
-            );
-          })}
-        </MDBListGroup>
-      )}
-    </ProductConsumer>
+            {value.categories.map((item, idx) => {
+              let clr = idx === value.currentCategory ? "#ff6600" : "#000000";
+              return (
+                <Item key={idx}>
+                  <MDBListGroupItem
+                    style={{ color: clr }}
+                    key={idx}
+                    onClick={() => {
+                      value.setCategory(idx);
+                    }}
+                    className=" "
+                  >
+                    <p className="">
+                      {item}
+                      {"  "}
+                      {idx === value.currentCategory ? (
+                        <MDBIcon icon="check" />
+                      ) : (
+                        <React.Fragment></React.Fragment>
+                      )}
+                    </p>
+                  </MDBListGroupItem>
+                </Item>
+              );
+            })}
+          </MDBListGroup>
+        )}
+      </ProductConsumer>
+    </div>
   );
 };
 

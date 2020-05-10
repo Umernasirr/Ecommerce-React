@@ -14,6 +14,12 @@ class ProductProvider extends Component {
     categories: ["ALL PRODUCTS"],
     currentCategory: 0,
     breadcrumbs: [],
+    isLoggedIn: false,
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    loginModalIsOpen: false,
   };
 
   setBreadCrumbs = (array) => {
@@ -35,15 +41,15 @@ class ProductProvider extends Component {
     });
   };
 
-  addToCart = (id) => {
+  addToCart = (id, quantity) => {
     let tempProducts = [...this.state.products];
     const index = tempProducts.indexOf(this.getItem(id));
     const product = tempProducts[index];
     // Error
     product.inCart = true;
-    product.count = 1;
+    product.count = quantity;
     const price = product.price;
-    product.total = price;
+    product.total = price * quantity;
     this.setState({
       products: tempProducts,
       cart: [...this.state.cart, product],
@@ -85,6 +91,18 @@ class ProductProvider extends Component {
     });
   };
 
+  openLoginModal = () => {
+    this.setState({
+      loginModalIsOpen: true,
+    });
+  };
+
+  closeLoginModal = () => {
+    this.setState({
+      loginModalIsOpen: false,
+    });
+  };
+
   setProducts = () => {
     let products = [];
     storeProducts.forEach((item) => {
@@ -95,6 +113,22 @@ class ProductProvider extends Component {
     this.setState({
       products,
     });
+  };
+
+  setUser = (userData) => {
+    let { name, email, phone, address } = userData;
+    this.setState({
+      name,
+      email,
+      phone,
+      address,
+    });
+  };
+
+  getUser = () => {
+    let { name, email, phone, address } = this.state;
+
+    return { name, email, phone, address };
   };
 
   setCategories = () => {
@@ -180,6 +214,13 @@ class ProductProvider extends Component {
     });
   };
 
+  login = () => {
+    this.setState({ isSignedIn: true });
+  };
+
+  logout = () => {
+    this.setState({ isSignedIn: false });
+  };
   render() {
     return (
       <ProductContext.Provider
@@ -197,6 +238,12 @@ class ProductProvider extends Component {
           setCategory: this.setCategory,
           setBreadCrumbs: this.setBreadCrumbs,
           clearCart: this.clearCart,
+          closeLoginModal: this.closeLoginModal,
+          openLoginModal: this.openLoginModal,
+          getUser: this.getUser,
+          setUser: this.setUser,
+          login: this.login,
+          logout: this.logout,
         }}
       >
         {this.props.children}
@@ -206,5 +253,5 @@ class ProductProvider extends Component {
 }
 
 const ProductConsumer = ProductContext.Consumer;
-
-export { ProductProvider, ProductConsumer };
+const Context = ProductContext;
+export { ProductProvider, ProductConsumer, Context };

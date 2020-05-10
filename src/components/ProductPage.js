@@ -5,6 +5,9 @@ import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
 
 import { ProductConsumer } from "../context";
 export default class ProductPage extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <MDBContainer fluid>

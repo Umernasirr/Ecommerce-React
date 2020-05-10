@@ -5,15 +5,18 @@ import {
   MDBModal,
   MDBModalBody,
   MDBModalFooter,
+  MDBInput,
+  MDBRow,
+  MDBCol,
 } from "mdbreact";
 
 import { ProductConsumer } from "../context";
-import { Redirect } from "react-router-dom";
-
+import { Redirect } from "react-dom";
 class Modal extends Component {
   state = {
     modal: null,
     redirect: null,
+    quantity: 1,
   };
 
   toggle = () => {
@@ -38,50 +41,89 @@ class Modal extends Component {
               return (
                 <MDBContainer
                   onClick={() => {
-                    closeModal();
+                    value.closeModal();
                   }}
                 >
                   <MDBModal
-                    className="my-5 py-5 modal-dialog"
+                    className="modal-dialog mt-5"
                     isOpen={modalIsOpen}
                     toggle={this.toggle}
                   >
-                    <MDBModalBody>
+                    <MDBModalBody
+                      onClick={(e) => {
+                        e.stopPropagation();
+                      }}
+                    >
                       <div className="container">
                         <div className="row">
-                          <div className="col-sm-6">
-                            <img alt={title} src={img} className="img-fluid" />
+                          <div className="col-6">
+                            <img
+                              alt={title}
+                              src={img}
+                              className="img-thumbnail hvr-grow"
+                              style={{ maxHeight: "70%" }}
+                            />
                           </div>
-                          <div className="col-sm-6 text-center ">
+                          <div className="col-6 text-center ">
                             <h3 className="text-primary my-4">{title}</h3>
                             <h4>Price: Rs. {price}</h4>
-                            <p className=" my-4">{info.slice(0, 100)}...</p>
+                            <p className=" my-2">{info.slice(0, 100)}...</p>
                           </div>
                         </div>
                       </div>
+                      <MDBContainer>
+                        <MDBRow>
+                          <MDBCol>
+                            <MDBInput
+                              className="mr-3"
+                              label="Enter Quantity"
+                              icon="price"
+                              name="quantity"
+                              type="text"
+                              validate
+                              default="1"
+                              error="wrong"
+                              success="right"
+                              value={this.state.quantity}
+                              onChange={(e) => {
+                                e.preventDefault();
+                                this.setState({
+                                  quantity: e.target.value,
+                                });
+                              }}
+                            />
+                          </MDBCol>
+                        </MDBRow>
+                      </MDBContainer>
                     </MDBModalBody>
-                    <MDBModalFooter>
+
+                    <MDBModalFooter
+                      onClick={(e) => {
+                        e.stopPropagation();
+                      }}
+                    >
                       <MDBBtn
                         color="secondary"
                         onClick={() => {
                           closeModal();
                         }}
                       >
-                        Store
+                        Back to Store
                       </MDBBtn>
 
                       <MDBBtn
                         disabled={inCart ? true : false}
                         onClick={() => {
-                          value.handleDetail(id);
+                          value.addToCart(id, this.state.quantity);
+
                           closeModal();
                           this.setState({
-                            redirect: "/details",
+                            quantity: 1,
                           });
                         }}
                         color="warning"
                       >
-                        View Details
+                        {inCart ? "Added to Cart" : "Add to Cart"}
                       </MDBBtn>
                     </MDBModalFooter>
                   </MDBModal>

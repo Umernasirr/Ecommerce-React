@@ -10,6 +10,10 @@ import {
   MDBCardBody,
 } from "mdbreact";
 export class Checkout extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   state = {
     name: "",
     email: "",

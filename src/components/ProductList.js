@@ -13,7 +13,7 @@ class ProductList extends Component {
       <ProductConsumer>
         {(value) => {
           return (
-            <div>
+            <div className="">
               <div>
                 <MDBInput
                   label="Search Products"

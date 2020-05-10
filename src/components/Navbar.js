@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   MDBNavbar,
   MDBNavbarBrand,
-  MDBNavbarNav,
   MDBNavItem,
   MDBNavLink,
   MDBNavbarToggler,
@@ -12,12 +11,11 @@ import {
   MDBDropdownToggle,
   MDBDropdownMenu,
   MDBDropdownItem,
-  MDBNav,
 } from "mdbreact";
 import posed from "react-pose";
 import { stack as Menu } from "react-burger-menu";
 import { ProductConsumer } from "../context";
-
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 class Navbar extends Component {
   state = {
@@ -61,10 +59,12 @@ class Navbar extends Component {
     return (
       <ProductConsumer>
         {(value) => (
-          <div className="outer-container ">
-            <MDBNavbar fixed="top" color="indigo" dark>
+          <div className="outer-container mb-5 pb-2 ">
+            <MDBNavbar className="" fixed="top" color="indigo" dark>
               <MDBNavbarBrand>
-                <strong className="white-text">DTL Parts</strong>
+                <Link to="/">
+                  <strong className="white-text">DTL Parts</strong>
+                </Link>
               </MDBNavbarBrand>
               <MDBNavbarToggler
                 className=" "
@@ -73,7 +73,20 @@ class Navbar extends Component {
                     isOpen: !this.state.isOpen,
                   });
                 }}
-              />
+              >
+                <MDBIcon icon="bars" className="py-2">
+                  {" "}
+                  <span
+                    className="badge badge-primary"
+                    style={{
+                      fontSize: "12px",
+                      paddingTop: "2px",
+                    }}
+                  >
+                    {value.cart.length}
+                  </span>
+                </MDBIcon>
+              </MDBNavbarToggler>
               <MDBCollapse
                 id="navbarCollapse3"
                 isOpen={this.state.isOpen}
@@ -127,6 +140,7 @@ class Navbar extends Component {
                   </MDBNavLink>
                 </this.Item>
               </MDBNavItem>
+
               <MDBNavItem>
                 <MDBDropdown className="border ">
                   <MDBDropdownToggle className="hvr-fade" nav>

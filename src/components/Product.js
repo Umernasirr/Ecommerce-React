@@ -15,6 +15,10 @@ import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
 
 class Product extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   Square = posed.div({
     idle: { scale: 1 },
     hovered: { scale: 1.05 },
@@ -76,14 +80,14 @@ class Product extends Component {
                           outline
                           rounded
                           onClick={() => {
-                            this.props.addToCart(product.id);
+                            value.openModal(product.id);
                           }}
                         >
                           {product.inCart ? "Added To Cart" : "Add To Cart"}
                         </MDBBtn>
                       </MDBCol>
                       <MDBCol md="12" xs="5">
-                        <Link className="mb-0 my-0" to="/details">
+                        <Link className="mb-2 my-0" to="/details">
                           <MDBBtn
                             outline
                             color="warning"

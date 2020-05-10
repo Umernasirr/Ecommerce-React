@@ -1,0 +1,24 @@
+.indexBackground {
+  background: url("/img/backgroundImage2.jpg") no-repeat center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  animation-duration: 10s;
+  background-attachment: fixed;
+}
+
+.background-text {
+  font-size: 10px !important;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+.background-text #logo-DTL-text {
+  font-size: 10px !important;
+
+  color: #e83a00;
+  border: 3px solid white;
+  padding: 10px;
+  animation-duration: 1.3s;
+}

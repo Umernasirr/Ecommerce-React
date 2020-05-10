@@ -17,6 +17,7 @@ export default class Details extends Component {
   counts = 0;
   componentDidMount() {
     this.counts = 0;
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -69,23 +70,24 @@ export default class Details extends Component {
                       </h5>
                     </p>
                     <div className="text-muted text-left ">{info}</div>
-                    <Link to="/">
-                      <MDBBtn color="primary mb-3" outline rounded>
-                        Back to Products
-                      </MDBBtn>
-                    </Link>
 
                     <MDBBtn
                       disabled={inCart ? true : false}
-                      color="warning mb-3"
+                      color="warning mt-3"
                       outline
                       rounded
                       onClick={() => {
-                        value.addToCart(id);
+                        value.openModal(id);
                       }}
                     >
                       {inCart ? "Added To Cart" : "Add To Cart"}
                     </MDBBtn>
+
+                    <Link to="/products">
+                      <MDBBtn color="primary mb-3" outline rounded>
+                        Back to Products
+                      </MDBBtn>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -111,7 +113,7 @@ export default class Details extends Component {
                           xs="12"
                           sm="12"
                         >
-                          <SimilarProduct item={item} />
+                          <SimilarProduct item={item} value={value} />
                         </MDBCol>
                       );
                     }
