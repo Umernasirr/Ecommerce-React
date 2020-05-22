@@ -103,7 +103,9 @@ class Modal extends Component {
                       }}
                     >
                       <MDBBtn
-                        color="secondary"
+                        color="danger"
+                        outline
+                        rounded
                         onClick={() => {
                           closeModal();
                         }}
@@ -112,6 +114,9 @@ class Modal extends Component {
                       </MDBBtn>
 
                       <MDBBtn
+                        color="primary"
+                        outline
+                        rounded
                         disabled={inCart ? true : false}
                         onClick={() => {
                           value.addToCart(id, this.state.quantity);
@@ -121,7 +126,6 @@ class Modal extends Component {
                             quantity: 1,
                           });
                         }}
-                        color="warning"
                       >
                         {inCart ? "Added to Cart" : "Add to Cart"}
                       </MDBBtn>

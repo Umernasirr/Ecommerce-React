@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { storeProducts, detailProduct } from "./data";
+import { featuredProducts, storeProducts, detailProduct } from "./data";
 const ProductContext = React.createContext();
 // Provider
 // Consumer
@@ -11,6 +11,7 @@ class ProductProvider extends Component {
     cart: [],
     modalIsOpen: false,
     modalProduct: detailProduct,
+    featuredProducts: featuredProducts,
     categories: ["ALL PRODUCTS"],
     currentCategory: 0,
     breadcrumbs: [],

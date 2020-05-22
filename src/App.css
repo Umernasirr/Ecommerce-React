@@ -1,9 +1,6 @@
-.outer-container {
-  font-size: 16px !important;
-}
-
 * {
-  font-size: 14.2px !important;
+  font-size: 14.2px;
+  /* background-color: #f0ebf4; */
 }
 
 .paddedHead {
@@ -29,7 +26,7 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   * {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 }
 

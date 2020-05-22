@@ -90,7 +90,7 @@ class Product extends Component {
                         <Link className="mb-2 my-0" to="/details">
                           <MDBBtn
                             outline
-                            color="warning"
+                            color="danger"
                             onClick={() => {
                               this.props.handleDetail(product.id);
                             }}

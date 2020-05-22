@@ -7,7 +7,6 @@
 }
 
 .background-text {
-  font-size: 10px !important;
   position: absolute;
   top: 58%;
   left: 50%;
@@ -15,10 +14,8 @@
   font-weight: bold;
 }
 .background-text #logo-DTL-text {
-  font-size: 10px !important;
-
-  color: #e83a00;
-  border: 3px solid white;
-  padding: 10px;
+  color: whitesmoke;
+  border: 2px solid #e83a00;
+  padding: 15px;
   animation-duration: 1.3s;
 }

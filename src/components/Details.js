@@ -55,47 +55,59 @@ export default class Details extends Component {
                     />
                   </div>
                   <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                    <h5 className="text-uppercase text-muted mt-3 mb-2">
+                    <h2 className="text-uppercase text-muted mt-3 mb-2">
                       Category: {category}
-                    </h5>
-                    <h5 className="text-primary">
-                      Price:
-                      <p>
-                        Rs. <strong> {price} </strong>
-                      </p>
-                    </h5>
-                    <p className="text-uppercase text-muted mt-3 mb-2 text-primary">
-                      <h5>
-                        <strong>Product Info: </strong>
-                      </h5>
+                    </h2>
+
+                    <h2 className="text-primary">Price: Rs. {price}</h2>
+                    <p className="text-uppercase text-muted mt-3 text-danger">
+                      <hr />
+                      <h4>Product Info:</h4>
                     </p>
+
                     <div className="text-muted text-left ">{info}</div>
+                    <hr />
 
-                    <MDBBtn
-                      disabled={inCart ? true : false}
-                      color="warning mt-3"
-                      outline
-                      rounded
-                      onClick={() => {
-                        value.openModal(id);
-                      }}
-                    >
-                      {inCart ? "Added To Cart" : "Add To Cart"}
-                    </MDBBtn>
-
-                    <Link to="/products">
-                      <MDBBtn color="primary mb-3" outline rounded>
-                        Back to Products
+                    <div className="mt-3">
+                      <MDBBtn
+                        disabled={inCart ? true : false}
+                        color="primary "
+                        outline
+                        rounded
+                        onClick={() => {
+                          value.openModal(id);
+                        }}
+                      >
+                        {inCart ? "Added To Cart" : "Add To Cart"}
                       </MDBBtn>
-                    </Link>
+
+                      <Link to="/products">
+                        <MDBBtn color="danger" outline rounded>
+                          Back to Products
+                        </MDBBtn>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
+              <hr />
 
               <MDBContainer>
                 <MDBRow className="">
                   <div className="col-10 mx-auto text-center text-primary my-5">
-                    <h1>Similar Products</h1>
+                    {value.products.map((item) => {
+                      if (
+                        item.categoryId === value.detailProduct.categoryId &&
+                        item.id !== value.detailProduct.id
+                      ) {
+                        return (
+                          <h1>
+                            Similar Products
+                            <hr />
+                          </h1>
+                        );
+                      }
+                    })}
                   </div>
 
                   {value.products.map((item) => {
@@ -104,8 +116,6 @@ export default class Details extends Component {
                       this.counts < 4 &&
                       item.id !== value.detailProduct.id
                     ) {
-                      this.counts = this.counts + 1;
-
                       return (
                         <MDBCol
                           className="text-center align-content-center"

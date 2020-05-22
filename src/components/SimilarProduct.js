@@ -1,6 +1,7 @@
 import React from "react";
-import { MDBCard, MDBCardBody, MDBCardImage, MDBCol } from "mdbreact";
+import { MDBCard, MDBCardBody, MDBBtn, MDBCardImage, MDBCol } from "mdbreact";
 import posed from "react-pose";
+import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 class SimilarProduct extends React.Component {
@@ -23,7 +24,7 @@ class SimilarProduct extends React.Component {
 
   state = { hovering: false };
   render() {
-    const { id, title, info, price, img } = this.props.item;
+    const { id, title, info, price, img, inCart } = this.props.item;
 
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />;
@@ -65,6 +66,33 @@ class SimilarProduct extends React.Component {
             </h5>
 
             <p>{info.slice(0, 50)}...</p>
+
+            <MDBCol md="12" xs="5">
+              <MDBBtn
+                disabled={inCart ? true : false}
+                color="primary "
+                outline
+                rounded
+                onClick={() => {
+                  this.props.value.openModal(id);
+                }}
+              >
+                {inCart ? "Added To Cart" : "Add To Cart"}
+              </MDBBtn>
+            </MDBCol>
+            <MDBCol md="12" xs="5">
+              <Link className="mb-2 my-0" to="/details">
+                <MDBBtn
+                  outline
+                  color="danger"
+                  onClick={() => {
+                    this.props.value.handleDetail(id);
+                  }}
+                >
+                  View Details
+                </MDBBtn>
+              </Link>
+            </MDBCol>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
