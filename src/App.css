@@ -3,8 +3,14 @@
   /* background-color: #f0ebf4; */
 }
 
+.dtlText {
+  color: rgb(248, 76, 8);
+
+}
+
+
 .paddedHead {
-  color: #e83a00;
+  color: #FE6C33;
   text-decoration: underline;
   font-weight: 500;
   padding-top: 20px;
@@ -16,12 +22,10 @@
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -31,5 +35,4 @@
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}

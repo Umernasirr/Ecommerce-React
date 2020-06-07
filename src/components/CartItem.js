@@ -25,7 +25,7 @@ const CartItem = ({ item }) => {
           <td className="py-3">Rs. {item.price}</td>
 
           <td className="" width="25%">
-            <MDBBtn
+            {/* <MDBBtn
               style={{
                 padding: "0px 1px",
               }}
@@ -34,11 +34,15 @@ const CartItem = ({ item }) => {
               }}
               size="xs"
               color="primary  "
-            >
-              <i className="fa-plus fas fa-xs" />
-            </MDBBtn>
+            > */}
+            <i
+              onClick={() => {
+                value.increment(item.id);
+              }}
+              className="fa-plus fas fa-xs text-primary border "
+            />
             {item.count}
-            <MDBBtn
+            {/* <MDBBtn
               style={{
                 padding: "0px 1px",
               }}
@@ -47,12 +51,17 @@ const CartItem = ({ item }) => {
               }}
               size="sm"
               color="danger"
-            >
-              <i className="fas fa-minus " />
-            </MDBBtn>
+            > */}
+            <i
+              onClick={() => {
+                value.decrement(item.id);
+              }}
+              className="fas fa-minus fa-xs text-primary border"
+            />
+            {/* </MDBBtn> */}
           </td>
           <td width="5%">
-            <MDBBtn
+            {/* <MDBBtn
               style={{
                 padding: "0px 2px",
               }}
@@ -61,9 +70,14 @@ const CartItem = ({ item }) => {
                 value.removeFromCart(item.id);
               }}
               color="primary"
-            >
-              <i className="fas fa-trash-alt"></i>
-            </MDBBtn>
+            > */}
+            <i
+              onClick={() => {
+                value.removeFromCart(item.id);
+              }}
+              className="fas fa-trash-alt text-danger "
+            ></i>
+            {/* </MDBBtn> */}
           </td>
           <td>Rs. {item.price * item.count}</td>
         </tr>

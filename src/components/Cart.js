@@ -5,9 +5,6 @@ import {
   MDBTableBody,
   MDBContainer,
   MDBBtn,
-  MDBRow,
-  MDBBreadcrumb,
-  MDBBreadcrumbItem,
 } from "mdbreact";
 
 import { ProductConsumer, Context } from "../context";
@@ -15,19 +12,13 @@ import EmptyCart from "./EmptyCart";
 import CartItem from "./CartItem";
 import { Link } from "mdbreact";
 export default class Cart extends Component {
-  static contextType = Context;
-
-  componentDidMount() {
-    let value = this.context;
-    console.log(value);
-
-    if (value.cart.length > 0) {
-      value.openLoginModal();
-    }
-  }
+  
   render() {
     return (
       <MDBContainer>
+        <br></br>
+        <p className=" mt-2 bt-5 h3  text-primary text-center">Your Cart</p>
+        <hr />
         <ProductConsumer>
           {(value) => {
             if (value.cart.length <= 0) {
@@ -35,7 +26,6 @@ export default class Cart extends Component {
             } else {
               const cartItems = value.cart;
 
-              console.log("hi");
               return (
                 <div>
                   <MDBTable responsive hover small>
@@ -56,25 +46,35 @@ export default class Cart extends Component {
                     </MDBTableBody>
                   </MDBTable>
 
-                  {/* <Checkout value={value} /> */}
-                  <MDBContainer>
-                    <MDBRow className="float-right">
+                  <div className="">
+                    <hr />
+                    <Link to="#">
                       <MDBBtn
+                        outline
+                        rounded
                         onClick={() => {
                           value.cart.forEach((item) => {
                             value.removeFromCart(item.id);
                           });
                           value.clearCart();
                         }}
-                        color="primary px-5 mx-3"
+                        color="danger "
                       >
                         Clear Cart
                       </MDBBtn>
-                      <Link className="text-white p-2 " to="/checkout">
-                        <MDBBtn className="text-white "> Go To Checkout</MDBBtn>
-                      </Link>
-                    </MDBRow>
-                  </MDBContainer>
+                    </Link>
+                    <Link className="text-white " to="/checkout">
+                      <MDBBtn
+                        color="primary"
+                        outline
+                        rounded
+                        className="text-white "
+                      >
+                        {" "}
+                        Go To Checkout
+                      </MDBBtn>
+                    </Link>
+                  </div>
                 </div>
               );
             }

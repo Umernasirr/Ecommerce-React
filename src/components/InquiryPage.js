@@ -108,18 +108,18 @@ export default class InquiryPage extends Component {
               </div>
               <div className="col-md-4">
                 <form
-                  className="lead p-3 "
+                  className="lead pt-3 "
                   style={{ fontWeight: "600", color: "black" }}
                 >
-                  <h3 className=" paddedHeading py-3">Office</h3>
-                  <address className="paddedText">
-                    <h4>
-                      <strong> DTL Motorcycle Parts</strong>
-                    </h4>
+                  <address className="">
+                    <h2 className="text-primary">Contact Us:</h2>
+                    <h2 className="paddedHead">DTL Motorcycle Parts</h2>
                     2nd Floor, Office # 4, Corner Castle Building,
                     <br /> Opposite Bahadur-Shah Market,
                     <br /> Karachi-Pakistan
-                    <br /> +92-21-32712153 dreamzpakistan@gmail.com
+                    <br /> +92-21-32712153
+                    <br />
+                    dreamzpakistan@gmail.com
                   </address>
                 </form>
               </div>

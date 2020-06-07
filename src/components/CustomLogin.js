@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { MDBInput, MDBBtn } from "mdbreact";
 import { ProductConsumer } from "../context";
+import { Link } from "react-router-dom";
 export default class CustomLogin extends Component {
   state = {
     name: "",
     email: "",
     phone: "",
     address: "",
+    display: "d-none",
   };
   render() {
     return (
@@ -23,12 +25,24 @@ export default class CustomLogin extends Component {
                   address: this.state.address,
                 };
 
-                value.setUser(user);
-                console.log(value.getUser());
-                value.closeLoginModal();
+                if (
+                  this.state.name == "" ||
+                  this.state.phone == "" ||
+                  this.state.address == ""
+                ) {
+                  this.setState({
+                    display: "d-block",
+                  });
+                } else {
+                  value.setUser(user);
+                  value.closeLoginModal();
+                  value.isLoggedIn = true;
+                }
               }}
             >
-              <p className="h4 text-center py-4">Confirm Checkout</p>
+              <p className="h5 text-center p-2">OR </p>
+              <hr />
+              <h5>Login to the site to access Products</h5>
               <div className="grey-text">
                 <MDBInput
                   label="Enter Name"
@@ -119,10 +133,25 @@ export default class CustomLogin extends Component {
                   value={value.calculateTotal() + 50}
                 />
               </div>
-              <div className="text-center py-4 mt-3">
-                <MDBBtn color="cyan" type="submit">
-                  Place Order
+
+              <p className={`red-text ${this.state.display}`}>
+                Please Enter The Details Above
+              </p>
+              <div className="text-center py-2 ">
+                <MDBBtn color="primary" type="submit">
+                  Login to Website
                 </MDBBtn>
+
+                <Link to="/">
+                  <MDBBtn
+                    color="secondary"
+                    onClick={() => {
+                      value.closeLoginModal();
+                    }}
+                  >
+                    Go Back to Home Without Logging In
+                  </MDBBtn>
+                </Link>
               </div>
             </form>
           </div>

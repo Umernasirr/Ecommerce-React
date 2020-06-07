@@ -36,7 +36,14 @@ export default class ContactPage extends Component {
                 <h2 class="paddedHead">SOCIAL MEDIA:</h2>
                 <p class="paddedText">
                   Follow us on
-                  <a href="https://www.facebook.com/DTL.Pakistan/">Facebook</a>.
+                  <a
+                    href="https://www.facebook.com/DTL.Pakistan/"
+                    target="_blank"
+                  >
+                    {" "}
+                    Facebook
+                  </a>
+                  .
                 </p>
               </div>
             </div>

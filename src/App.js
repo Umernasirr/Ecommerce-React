@@ -42,7 +42,7 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route path="/checkout" component={Checkout} />
 
-            <Route component={Default} />
+            <Route component={HomePage} />
           </Switch>
           <Footer />
           <LoginModal />

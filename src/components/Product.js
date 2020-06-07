@@ -13,11 +13,13 @@ import {
 import { Link } from "react-router-dom";
 
 import { ProductConsumer } from "../context";
-
+import { Context } from "../context";
 class Product extends Component {
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
+  static contextType = Context;
+
+  state = {
+    cartItems: [...this.context.cart],
+  };
 
   Square = posed.div({
     idle: { scale: 1 },

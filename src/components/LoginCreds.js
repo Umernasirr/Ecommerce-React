@@ -13,40 +13,56 @@ export default class LoginCreds extends Component {
       address,
     };
   };
+  // fix fb and google login idk how tho lol
+  responseFacebook = async (response) => {
+    const user = await this.makeUser(response);
+    await this.value.setUser(user);
+    this.value.login();
+    this.value.closeLoginModal();
+    console.log(this.value.getUser());
+  };
 
   value = this.props.value;
   render() {
-    const responseFacebook = (response) => {
-      console.log(response);
-    };
-
     const responseGoogle = async (response) => {
-      const user = await this.makeUser(response.profileObj);
-      this.value.setUser(user);
-
-      console.log(this.value.getUser());
-      this.value.login();
-      this.value.closeLoginModal();
+      const user = await this.makeUser(response);
+      console.log("hi");
+      // await this.value.setUser(user);
+      // if (this.value.user !== "" || this.value.email !== "") {
+      //   console.log("data ayaa");
+      //   this.value.login();
+      //   console.log(this.value.getUser());
+      //   this.value.closeLoginModal();
+      // }
     };
 
-    return (
-      <div className="text-center align-content-center">
-        <FacebookLogin
-          appId="167722334591221" //APP ID NOT CREATED YET
-          fields="name,email,picture"
-          callback={responseFacebook}
-        />
-        <br />
-        <br />
-        <GoogleLogin
-          clientId="86368302418-incu7e1uvd9o8o9hbr2vvk31p94346uu.apps.googleusercontent.com"
-          buttonText="LOGIN WITH GOOGLE"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-        />
+    {
+      console.log(this.value.isLoggedIn);
+      return !this.value.isLoggedIn ? (
+        <div className="text-center align-content-center">
+          <FacebookLogin
+            autoLoad={false}
+            appId="167722334591221" //APP ID NOT CREATED YET
+            fields="name,email,picture"
+            callback={(response) => {
+              this.responseFacebook(response);
+            }}
+          />
+          <br />
+          <br />
+          {/* <GoogleLogin
+            clientId="86368302418-incu7e1uvd9o8o9hbr2vvk31p94346uu.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={"single_host_origin"}
+          /> */}
 
-        <CustomLogin />
-      </div>
-    );
+          <CustomLogin value={this.value} />
+        </div>
+      ) : (
+        <React.Fragment></React.Fragment>
+      );
+    }
   }
 }

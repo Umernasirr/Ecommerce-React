@@ -1,177 +1,227 @@
 export const storeProducts = [
   {
-    id: 1,
-    title: "Google Pixel - Black",
-    img: "img/product-1.png",
-    price: 12000,
-    category: "GOOGLE",
+    id: 101,
+    title: "Bundle Offer 1",
+    price: 1049,
+    img: "/img/bundles/01.jpg",
+    category: "Bundle",
     categoryId: 1,
-
     info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+      "● Wheel Drum Rear CD70CDI\n● Wheel Sleeve\n● Wheel Spoke 300x17 Galvanized\n with a special discount in only Rs.1049. Save Rs. 146 by ordering from our website. ",
     inCart: false,
     count: 0,
     total: 0,
   },
+  {
+    id: 102,
+    title: "Bundle Offer 2",
+    price: 440,
+    img: "/img/bundles/02.jpg",
+    category: "Bundle",
+    categoryId: 1,
+    info:
+      "● Clutch Plate CD70\n● Pressure Plase CD70\n● Clutch Outer/Katora CD70\n● Clutch Box Spring Set \n with a special discount in only Rs. 440. Save Rs. 60 by ordering from our website. ",
+    inCart: false,
+    count: 0,
+    total: 0,
+  },
+
+  {
+    id: 103,
+    title: "Bundle Offer 3",
+    price: 799,
+    img: "/img/bundles/03.jpg",
+    category: "Bundle",
+    categoryId: 1,
+    info:
+      "● Headlight Complete CD70 (metal beam inside)\n● Backlight CD70\n● Indicator\n with a special discount in only Rs. 799. Save Rs. 81 by ordering from our website. ",
+    inCart: false,
+    count: 0,
+    total: 0,
+  },
+
+  {
+    id: 1,
+    title: "Chain Cover",
+    price: 475,
+    img: "/img/items/chaincover.jpg",
+    category: "Body Parts",
+    categoryId: 2,
+    info: "• 0.6mm Sheet Inside and Outside for maximum strength\n • Manufactured according to OEM standards for durability\n • Heat resistant paint for long life ", 
+    inCart: false,
+    count: 0,
+    total: 0,
+  },
+
   {
     id: 2,
-    title: "Samsung S7",
-    img: "img/product-2.png",
-    price: 16000,
-    category: "SAMSUNG",
-    categoryId: 2,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
-    inCart: false,
-    count: 0,
-    total: 0,
-  },
-  {
-    id: 3,
-    title: "HTC 10 - Black",
-    img: "img/product-3.png",
-    price: 80000,
-    category: "htc",
+    title: "Chain Sprocket Set CD70CDI 14T/41T (Gold)",
+    price: 1149,
+    img: "/img/items/chainkit.jpg",
+    category: "Mechanical",
     categoryId: 3,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+    info: "• Heavy duty chain & sprockets set\n •	Made in Malaysia \n •	Heat treated sprockets for long lasting performance and durability.   ", 
     inCart: false,
     count: 0,
     total: 0,
   },
+
+   
   {
     id: 4,
-    title: "HTC 10 - White",
-    img: "img/product-4.png",
-    price: 20000,
-    category: "htc",
+    title: "Chain Sprocket Set CD70CDI 14T/41T (Silver)",
+    price: 849,
+    img: "/img/noImage.jpg",
+    category: "Mechanical",
     categoryId: 3,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+    info: "• Heavy duty chain & sprockets set\n •	Best value for Money Chain Sprocket set \n •	Heat treated sprockets for long lasting performance and durability.   ", 
     inCart: false,
     count: 0,
     total: 0,
   },
+
+   
   {
     id: 5,
-    title: "HTC Desire 626s",
-    img: "img/product-5.png",
-    price: 24000,
-    category: "htc",
-    categoryId: 3,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+    title: "Wheel Spokes Chrome Finish 300 x 17 (CG125 Rear)",
+    price: 289,
+    img: "/img/items/spokeset.jpg",
+    category: "Wheel Item",
+    categoryId: 4,
+    info: "• High Carbon Steel Wire\n • Multi-layered Chrome for Shine\n • Long lasting Shine",
     inCart: false,
     count: 0,
     total: 0,
   },
+
+
   {
     id: 6,
-    title: "Vintage Iphone",
-    img: "img/product-6.png",
-    price: 17000,
-    category: "apple",
+    title: "Wheel Spokes Chrome Finish 250 x 17 (CG125 Rear)",
+    price: 279,
+    img: "/img/items/spokeset.jpg",
+    category: "Wheel Item",
     categoryId: 4,
+    info: "• High Carbon Steel Wire\n • Multi-layered Chrome for Shine\n • Long lasting Shine",
+    inCart: false,
+    count: 0,
+    total: 0,
+  },
+
+
+
+];
+
+export const detailProduct = {
+  id: 7,
+  title: "Bundle Offer 1",
+  price: 1049,
+  img: "/img/bundles/01.jpg",
+  category: "Bundle",
+  categoryId: 1,
+  info:
+    "Includes:\n● Wheel Drum Rear CD70CDI\n● Wheel Sleeve\n● Wheel Spoke 300x17 Galvanized\n with a special discount in only Rs.1049. Save Rs. 146 by ordering from our website. ",
+  inCart: false,
+  count: 0,
+  total: 0,
+};
+
+export const bundledProducts = [
+  {
+    id: 101,
+    title: "Bundle Offer 1",
+    price: 1049,
+    img: "/img/bundles/01.jpg",
+    category: "Bundle",
+    categoryId: 1,
     info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+      "● Wheel Drum Rear CD70CDI\n● Wheel Sleeve\n● Wheel Spoke 300x17 Galvanized\n with a special discount in only Rs.1049. Save Rs. 146 by ordering from our website. ",
     inCart: false,
     count: 0,
     total: 0,
   },
   {
-    id: 7,
-    title: "Iphone 7",
-    img: "img/product-7.png",
-    price: 30000,
-    category: "apple",
-    categoryId: 4,
+    id: 102,
+    title: "Bundle Offer 2",
+    price: 440,
+    img: "/img/bundles/02.jpg",
+    category: "Bundle",
+    categoryId: 1,
     info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+      "● Clutch Plate CD70\n● Pressure Plase CD70\n● Clutch Outer/Katora CD70\n● Clutch Box Spring Set \n with a special discount in only Rs. 440. Save Rs. 60 by ordering from our website. ",
     inCart: false,
     count: 0,
     total: 0,
   },
+
   {
-    id: 8,
-    title: "Smashed Iphone",
-    img: "img/product-8.png",
-    price: 2000,
-    category: "apple",
-    categoryId: 4,
+    id: 103,
+    title: "Bundle Offer 3",
+    price: 799,
+    img: "/img/bundles/03.jpg",
+    category: "Bundle",
+    categoryId: 1,
     info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+      "● Headlight Complete CD70 (metal beam inside)\n● Backlight CD70\n● Indicator\n with a special discount in only Rs. 799. Save Rs. 81 by ordering from our website. ",
     inCart: false,
     count: 0,
     total: 0,
   },
 ];
 
-export const detailProduct = {
-  id: 1,
-  title: "Google Pixel - Black",
-  img: "img/product-1.png",
-  price: 12000,
-  category: "GOOGLE",
-  categoryId: 1,
-
-  info:
-    "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
-  inCart: false,
-  count: 0,
-  total: 0,
-};
-
 export const featuredProducts = [
+  
   {
-    id: 4,
-    title: "HTC 10 - Black",
-    img: "img/product-4.png",
-    price: 20000,
-    category: "htc",
-    categoryId: 3,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+    id: 1,
+    title: "Chain Cover",
+    price: 475,
+    img: "/img/items/chaincover.jpg",
+    category: "Body Parts",
+    categoryId: 2,
+    info: "• 0.6mm Sheet Inside and Outside for maximum strength\n • Manufactured according to OEM standards for durability\n • Heat resistant paint for long life ", 
     inCart: false,
     count: 0,
     total: 0,
   },
+
+  {
+    id: 2,
+    title: "Chain Sprocket Set CD70CDI 14T/41T (Gold)",
+    price: 1149,
+    img: "/img/items/chainkit.jpg",
+    category: "Mechanical",
+    categoryId: 3,
+    info: "• Heavy duty chain & sprockets set\n •	Made in Malaysia \n •	Heat treated sprockets for long lasting performance and durability.   ", 
+    inCart: false,
+    count: 0,
+    total: 0,
+  },
+   
   {
     id: 5,
-    title: "HTC Desire 626s",
-    img: "img/product-5.png",
-    price: 24000,
-    category: "htc",
-    categoryId: 3,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+    title: "Wheel Spokes Chrome Finish 300 x 17 (CG125 Rear)",
+    price: 289,
+    img: "/img/items/spokeset.jpg",
+    category: "Wheel Item",
+    categoryId: 4,
+    info: "• High Carbon Steel Wire\n • Multi-layered Chrome for Shine\n • Long lasting Shine",
     inCart: false,
     count: 0,
     total: 0,
   },
+
   {
     id: 6,
-    title: "Vintage Iphone",
-    img: "img/product-6.png",
-    price: 17000,
-    category: "apple",
+    title: "Wheel Spokes Chrome Finish 250 x 17 (CG125 Rear)",
+    price: 279,
+    img: "/img/items/spokeset.jpg",
+    category: "Wheel Item",
     categoryId: 4,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+    info: "• High Carbon Steel Wire\n • Multi-layered Chrome for Shine\n • Long lasting Shine",
     inCart: false,
     count: 0,
     total: 0,
   },
-  {
-    id: 7,
-    title: "Iphone 7",
-    img: "img/product-7.png",
-    price: 30000,
-    category: "apple",
-    categoryId: 4,
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
-    inCart: false,
-    count: 0,
-    total: 0,
-  },
+
+
 ];

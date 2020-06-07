@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./HomePage.css";
-import Carousel from "./Carousel";
 import SimilarProduct from "./SimilarProduct";
 import {
   MDBCol,
@@ -15,6 +14,7 @@ import {
 } from "mdbreact";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
+
 export default class HomePage extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -37,14 +37,6 @@ export default class HomePage extends Component {
         </div>
         {/* Body */}
 
-        <div className="my-4  mx-5">
-          <h3 className="mx-auto text-center mx-5 display-5">
-            Welcome to the Official DTL Parts Website
-            <hr />
-          </h3>
-
-          {/* <Carousel /> */}
-        </div>
         <MDBContainer fluid>
           <MDBRow className="text-center justify-content-center my-3">
             <Link to="/products">
@@ -55,100 +47,42 @@ export default class HomePage extends Component {
           </MDBRow>
 
           {/* The fancy 3 column thingy */}
-
           <MDBRow className="text-center justify-content-center my-3">
-            <MDBCol className="mt-2" sm="12" md="3">
-              <MDBCard style={{ height: "90%" }}>
-                <MDBCardImage
-                  className="img-fluid d-block w-100"
-                  src="/img/dtlgif3.gif"
-                  waves
-                />
-                <MDBCardBody className="text-center">
-                  <MDBCardTitle>Visit Our Store</MDBCardTitle>
-                  <MDBCardText>
-                    Buy Products on the Official DTL Motorcycle Parts Online
-                    Store with Cash on Delivery
-                  </MDBCardText>
-                  <Link>
-                    <MDBBtn color="primary " outline rounded href="#">
-                      Goto Store
-                    </MDBBtn>
-                  </Link>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+            <ProductConsumer>
+              {(value) => {
+                return value.bundledProducts.map((bundleItem) => (
+                  <MDBCol className="my-2" sm="12" md="3">
+                    <MDBCard style={{ height: "90%" }}>
+                      <MDBCardImage
+                        className="img-fluid d-block w-100"
+                        src={bundleItem.img}
+                        waves
+                      />
+                      <MDBCardBody className="text-center">
+                        <MDBCardTitle>{bundleItem.title}</MDBCardTitle>
+                        <MDBCardText>{bundleItem.info}</MDBCardText>
 
-            <MDBCol className="mt-2" sm="12" md="3">
-              <MDBCard style={{ height: "90%" }}>
-                <MDBCardImage
-                  className="img-fluid d-block w-100"
-                  src="/img/dtlgif4.gif"
-                  waves
-                />
-                <MDBCardBody className="text-center">
-                  <MDBCardTitle>Contact Us</MDBCardTitle>
-                  <MDBCardText>
-                    Get in touch with us and submit your queries on the site
-                  </MDBCardText>
-                  <Link>
-                    <MDBBtn color="primary " outline rounded href="#">
-                      Contact Us
-                    </MDBBtn>
-                  </Link>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-
-            <MDBCol className="mt-2" sm="12" md="3">
-              <MDBCard style={{ height: "90%" }}>
-                <MDBCardImage
-                  className="img-fluid d-block w-100"
-                  src="/img/dtlgif1.gif"
-                  waves
-                />
-                <MDBCardBody className="text-center">
-                  <MDBCardTitle>Visit Our DARAZ Store</MDBCardTitle>
-                  <MDBCardText>
-                    Shop online using the OFFICIAL DARAZ Store of DTL Motorcycle
-                    Parts
-                  </MDBCardText>
-                  <Link>
-                    <MDBBtn color="primary " outline rounded href="#">
-                      Daraz Shop
-                    </MDBBtn>
-                  </Link>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-
-            <MDBCol className="mt-2" sm="12" md="3">
-              <MDBCard style={{ height: "90%" }}>
-                <MDBCardImage
-                  className="img-fluid d-block w-100"
-                  src="/img/dtlgif1.gif"
-                  waves
-                />
-                <MDBCardBody className="text-center">
-                  <MDBCardTitle>Visit Our DARAZ Store</MDBCardTitle>
-                  <MDBCardText>
-                    Shop online using the OFFICIAL DARAZ Store of DTL Motorcycle
-                    Parts
-                  </MDBCardText>
-                  <Link>
-                    <MDBBtn color="primary " outline rounded href="#">
-                      Daraz Shop
-                    </MDBBtn>
-                  </Link>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
+                        <MDBBtn
+                          disabled={bundleItem.inCart ? true : false}
+                          color="primary "
+                          outline
+                          rounded
+                          onClick={() => {
+                            value.openModal(bundleItem.id);
+                          }}
+                        >
+                          {bundleItem.inCart ? "Added To Cart" : "Add To Cart"}
+                        </MDBBtn>
+                      </MDBCardBody>
+                    </MDBCard>
+                  </MDBCol>
+                ));
+              }}
+            </ProductConsumer>
           </MDBRow>
 
-          {/* Featured Products */}
-
           <MDBRow>
-            <h4 className="col-10 mx-auto text-center mb-3">
+            <h4 className="col-10 text-primary  mx-auto text-center mb-3 mx-5">
               Featured Products
               <hr />
             </h4>

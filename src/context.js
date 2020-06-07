@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { featuredProducts, storeProducts, detailProduct } from "./data";
+import {
+  featuredProducts,
+  storeProducts,
+  detailProduct,
+  bundledProducts,
+} from "./data";
 const ProductContext = React.createContext();
 // Provider
 // Consumer
@@ -12,7 +17,8 @@ class ProductProvider extends Component {
     modalIsOpen: false,
     modalProduct: detailProduct,
     featuredProducts: featuredProducts,
-    categories: ["ALL PRODUCTS"],
+    bundledProducts: bundledProducts,
+    categories: ["All Products"],
     currentCategory: 0,
     breadcrumbs: [],
     isLoggedIn: false,
@@ -137,7 +143,7 @@ class ProductProvider extends Component {
     storeProducts.forEach((item) => {
       const singleItem = { ...item };
 
-      categories = [...categories, singleItem.category.toUpperCase()];
+      categories = [...categories, singleItem.category];
     });
     categories = new Set(categories);
 
@@ -216,11 +222,11 @@ class ProductProvider extends Component {
   };
 
   login = () => {
-    this.setState({ isSignedIn: true });
+    this.setState({ isLoggedIn: true });
   };
 
   logout = () => {
-    this.setState({ isSignedIn: false });
+    this.setState({ isLoggedIn: false });
   };
   render() {
     return (

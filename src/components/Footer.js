@@ -1,70 +1,91 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { MDBFooter, MDBRow, MDBCol, MDBContainer } from "mdbreact";
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="card-footer">
-        <div className="container p-2">
-          <div className="row text-center">
-            <div className="col-lg-4 col-6">
-              <nav
-                className="nav justify-content-center|justify-content-end  d-block footer"
-                style={{ color: "black" }}
-              >
-                <h4 className="p-2 d-block">Company</h4>
-                <Link className="nav-link hvr-grow d-block" to="/">
-                  Home
-                </Link>
-                <Link className="nav-link hvr-grow d-block" to="/about">
-                  About Us
-                </Link>
-                <Link className="nav-link hvr-grow d-block" to="/products">
-                  Shop
-                </Link>
+      <MDBFooter
+        color="special-color-dark
+"
+        className="font-small  "
+      >
+        <br />
+        <MDBContainer fluid className=" text-center text-left">
+          <MDBRow>
+            <MDBCol md="6">
+              <div className="d-none d-md-block">
+                <h5 className="title white-text font-weight-bold ">About Us</h5>
+                <p>
+                  DTL Dynamic technology Leader has been established since 2013
+                  Today, our wide range of product consists of sprocket kits,
+                  brake shoes, bearings, engine and body parts for motorcycles.
+                </p>
+                <hr />
+              </div>
 
-                <Link className="nav-link hvr-grow d-block" to="/cart">
-                  View Cart
-                </Link>
-
-                <Link className="nav-link hvr-grow d-block" to="/contact">
-                  Contact Us
-                </Link>
-                <Link className="nav-link hvr-grow d-block" to="/inquiry">
-                  Inquiry
-                </Link>
-              </nav>
-            </div>
-            <div className="col-lg-4 col-6 " style={{ color: "black" }}>
-              <h4 className="p-2 ">Contact</h4>
-              <p className="email">
-                taimur.dtl
+              <h5 className="title white-text font-weight-bold">Contact Us</h5>
+              <p>
+                Email: taimur.dtl@gmail.com
                 <br />
-                @gmail.com
+                Phone: 0331-2150583
+                <br />
+                Aurangzeb market, M.A Jinnah Road Karachi Pakistan
               </p>
-              <p>Phone: 0331-2150583</p>
-            </div>
-            <div className="col-lg-4" style={{ color: "black" }}>
-              <div className="container">
+              <hr />
+            </MDBCol>
+            <MDBCol className="" md="6">
+              <h5 className="title white-text font-weight-bold ">
+                Page Navigation
+              </h5>
+
+              <div className="container mt-2">
                 <div className="row">
-                  <div className="col-0 col-md-2"></div>
-                  <div className="col-12 col-md-8 ">
-                    <h4 className="p-2">Address</h4>
-                    <address className="text-center">
-                      Aurangzeb market, M.A Jinnah Road Karachi Pakistan
-                    </address>
+                  <div className="col-4 col-md-6 col-lg-12">
+                    <Link className=" nav-link hvr-grow d-block" to="/">
+                      Home
+                    </Link>
+                  </div>
+
+                  <div className="col-4 col-md-6 d-lg-none">
+                    <Link className=" nav-link hvr-grow d-block" to="/about">
+                      About
+                    </Link>
+                  </div>
+
+                  <div className="col-4 col-md-6 col-lg-12">
+                    <Link className="nav-link hvr-grow d-block " to="/products">
+                      Shop
+                    </Link>
+                  </div>
+                  <div className="col-4 col-md-6 col-lg-12">
+                    <Link className="nav-link hvr-grow d-block " to="/cart">
+                      View Cart
+                    </Link>
+                  </div>
+
+                  <div className="col-4 col-md-6 col-lg-12">
+                    <Link className="nav-link hvr-grow d-block " to="/inquiry">
+                      Inquiry
+                    </Link>
+                  </div>
+
+                  <div className="col-4 col-md-6 col-lg-12">
+                    <Link className="nav-link hvr-grow d-block " to="/contact">
+                      Contact Us
+                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+        <div className="footer-copyright mt-4 text-center py-3">
+          <MDBContainer fluid>
+            &copy; {new Date().getFullYear()} Copyright:{" "}
+            <a href="https://www.mdbootstrap.com"> DTL Motorcycle Parts </a>
+          </MDBContainer>
         </div>
-        <hr />
-        <div className="text-center" style={{ color: "black" }}>
-          <p>
-            <small> COPYRIGHT &copy; 2020 - DTL MOTORCYCLE PARTS </small>
-          </p>
-        </div>
-      </footer>
+      </MDBFooter>
     );
   }
 }
