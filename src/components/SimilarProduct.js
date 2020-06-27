@@ -74,7 +74,12 @@ class SimilarProduct extends React.Component {
                 outline
                 rounded
                 onClick={() => {
-                  this.props.value.openModal(id);
+
+                  if (!this.props.value.isLoggedIn) {
+                    this.props.value.openLoginModal();
+                  }else{
+                    this.props.value.openModal(id);
+                  }
                 }}
               >
                 {inCart ? "Added To Cart" : "Add To Cart"}

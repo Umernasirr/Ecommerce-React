@@ -3,7 +3,6 @@ import { MDBBtn } from "mdbreact";
 import { ProductConsumer } from "../context";
 
 const CartItem = ({ item }) => {
-  console.log(item.count);
   return (
     <ProductConsumer>
       {(value) => (

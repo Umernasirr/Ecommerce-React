@@ -30,12 +30,12 @@ class EmptyCart extends React.Component {
                 </MDBBtn>
               </Link>
               <p>
-                <a
+                {/* <a
                   href="https://www.facebook.com/DTL.Pakistan/"
                   className="icons-sm fb-ic ml-1"
                 >
                   <MDBIcon fab icon="facebook-f" />
-                </a>
+                </a> */}
               </p>
             </MDBCardBody>
           </MDBCard>

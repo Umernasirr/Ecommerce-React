@@ -26,9 +26,8 @@ export default class CustomLogin extends Component {
                 };
 
                 if (
-                  this.state.name == "" ||
-                  this.state.phone == "" ||
-                  this.state.address == ""
+                  this.state.name === "" ||
+                  this.state.phone === ""
                 ) {
                   this.setState({
                     display: "d-block",
@@ -37,7 +36,8 @@ export default class CustomLogin extends Component {
                   value.setUser(user);
                   value.closeLoginModal();
                   value.isLoggedIn = true;
-                }
+                  value.login()
+                                }
               }}
             >
               <p className="h5 text-center p-2">OR </p>
@@ -73,27 +73,12 @@ export default class CustomLogin extends Component {
                   }}
                 />
 
-                <MDBInput
-                  label="Enter Shipping Address"
-                  group
-                  type="text"
-                  validate
-                  name="address"
-                  value={this.state.address}
-                  onChange={(e) => {
-                    this.setState({
-                      address: e.target.value,
-                    });
-                  }}
-                />
-
-                <MDBInput
-                  label="Enter your Email"
-                  group
+<MDBInput
+                  label="Enter Email (Optional)"
                   type="text"
                   error="wrong"
-                  success="right"
                   name="email"
+                  success="right"
                   value={this.state.email}
                   onChange={(e) => {
                     this.setState({
@@ -101,6 +86,9 @@ export default class CustomLogin extends Component {
                     });
                   }}
                 />
+
+               
+                
 
                 {value.cart.map((item, idx) => {
                   let clonedItem = { ...item };

@@ -122,9 +122,9 @@ class Navbar extends Component {
 
                     <MDBNavLink
                       className="grey-text font-weight-bold  hvr-grow"
-                      to="/checkout"
+                      to="/cart"
                     >
-                      Checkout
+                     View Cart
                     </MDBNavLink>
                   </MDBNavbarNav>
                 </div>
@@ -164,7 +164,7 @@ class Navbar extends Component {
               outerContainerId={"outer-container"}
             >
               <MDBNavItem className="text-center br-0 mb-3">
-                <MDBLink
+                <MDBLink to="#"
                   onClick={() => {
                     this.setState({
                       isOpen: !this.state.isOpen,
@@ -286,7 +286,6 @@ class Navbar extends Component {
                 <this.Item>
                   <MDBNavLink
                     onClick={() => {
-                      console.log(this.state.isOpen);
                       this.setState({
                         isOpen: !this.state.isOpen,
                       });

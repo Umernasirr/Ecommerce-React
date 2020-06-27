@@ -75,8 +75,12 @@ export default class Details extends Component {
                         outline
                         rounded
                         onClick={() => {
-                          value.openModal(id);
-                        }}
+                          if (!value.isLoggedIn) {
+                            value.openLoginModal();
+                          }else{
+                            value.openModal(id);
+                        
+                          }                        }}
                       >
                         {inCart ? "Added To Cart" : "Add To Cart"}
                       </MDBBtn>
@@ -110,7 +114,7 @@ export default class Details extends Component {
                     })}
                   </div>
 
-                  {value.products.map((item) => {
+                  {value.products.map((item )=> {
                     if (
                       item.categoryId === value.detailProduct.categoryId &&
                       this.counts < 4 &&

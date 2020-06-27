@@ -27,7 +27,6 @@ export class Checkout extends Component {
         {(value) => {
           const { name, email, phone, address } = value;
 
-          console.log(name, email, phone, address);
           return (
             <MDBContainer>
               <MDBRow>

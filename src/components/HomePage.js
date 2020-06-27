@@ -51,13 +51,15 @@ export default class HomePage extends Component {
             <ProductConsumer>
               {(value) => {
                 return value.bundledProducts.map((bundleItem) => (
-                  <MDBCol className="my-2" sm="12" md="3">
+                  <MDBCol key={bundleItem.id} className="my-2" sm="12" md="3">
+
                     <MDBCard style={{ height: "90%" }}>
                       <MDBCardImage
                         className="img-fluid d-block w-100"
                         src={bundleItem.img}
                         waves
                       />
+
                       <MDBCardBody className="text-center">
                         <MDBCardTitle>{bundleItem.title}</MDBCardTitle>
                         <MDBCardText>{bundleItem.info}</MDBCardText>
@@ -68,7 +70,13 @@ export default class HomePage extends Component {
                           outline
                           rounded
                           onClick={() => {
-                            value.openModal(bundleItem.id);
+                            if (!value.isLoggedIn) {
+                              value.openLoginModal();
+                            }else{
+                              console.log(bundleItem.inCart)
+                              value.openModal(bundleItem.id);
+
+                            }
                           }}
                         >
                           {bundleItem.inCart ? "Added To Cart" : "Add To Cart"}
@@ -91,7 +99,7 @@ export default class HomePage extends Component {
               {(value) => {
                 // eslint-disable-next-line no-lone-blocks
                 return value.featuredProducts.map((item) => (
-                  <MDBCol
+                  <MDBCol key={item.id}
                     className="text-center align-content-center"
                     md="3"
                     xs="12"

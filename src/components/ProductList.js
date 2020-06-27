@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Product from "./Product";
 import { MDBCol, MDBInput } from "mdbreact";
 import { ProductConsumer } from "../context";
+
 class ProductList extends Component {
   state = {
     products: [],

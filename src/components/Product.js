@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import posed from "react-pose";
+
+
 import {
   MDBBtn,
   MDBCol,
@@ -16,6 +18,7 @@ import { ProductConsumer } from "../context";
 import { Context } from "../context";
 class Product extends Component {
   static contextType = Context;
+
 
   state = {
     cartItems: [...this.context.cart],
@@ -82,7 +85,12 @@ class Product extends Component {
                           outline
                           rounded
                           onClick={() => {
-                            value.openModal(product.id);
+                            if (!value.isLoggedIn) {
+                              value.openLoginModal();
+                            }else{
+                              value.openModal(product.id);
+                          
+                            }
                           }}
                         >
                           {product.inCart ? "Added To Cart" : "Add To Cart"}

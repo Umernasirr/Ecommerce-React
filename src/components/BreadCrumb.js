@@ -7,8 +7,6 @@ export default class BreadCrumb extends Component {
     return (
       <ProductConsumer>
         {(value) => {
-          let breadcrumbArray = value.breadcrumbs.splice();
-          console.log(breadcrumbArray);
           return (
             <div>
               <MDBBreadcrumb dark>

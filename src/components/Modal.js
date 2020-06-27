@@ -67,19 +67,8 @@ class Modal extends Component {
                           <div className="col-6 text-center ">
                             <h3 className="text-primary mt-2">{title}</h3>
                             <h4>Price: Rs. {price}</h4>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <p className=" text-justify my-2 mx-3 ">
-                            {info.slice(0, 100)}...
-                          </p>
-                        </div>
-                      </div>
-                      <MDBContainer>
-                        <MDBRow>
-                          <MDBCol className="justify-content-center">
                             <MDBInput
-                              className="mr-3 "
+                              className=""
                               label="Enter Quantity"
                               icon="price"
                               name="quantity"
@@ -97,10 +86,19 @@ class Modal extends Component {
                                 });
                               }}
                             />
-                          </MDBCol>
-                        </MDBRow>
-                      </MDBContainer>
-                    </MDBModalBody>
+
+                          </div>
+                      
+                           
+                      
+                        </div>
+                        <div className="row">
+                          <p className=" text-justify my-2 mx-3 ">
+                            {info.slice(0, 400)}...
+                          </p>
+                        </div>
+                      </div>
+                      </MDBModalBody>
 
                     <MDBModalFooter
                       onClick={(e) => {
