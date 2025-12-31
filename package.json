@@ -17,7 +17,7 @@
     "react-inner-image-zoom": "^1.0.5",
     "react-pose": "^4.0.10",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "set HTTPS=true&&react-scripts start",
